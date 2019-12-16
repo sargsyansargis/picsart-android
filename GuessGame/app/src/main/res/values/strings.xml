@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Guess Game</string>
+    <string name="name">name</string>
+    <string name="surname">Surname</string>
+    <string name="start_game">Start Game</string>
+    <string name="type_number">Type Number</string>
+    <string name="next">Next</string>
+    <string name="start_again">Start Again</string>
+    <string name="you_win">You Win !!</string>
+    <string name="share">Share</string>
+    <string name="you_lose">You Lose!!</string>
+    <string name="game_rules">Game Rules</string>
+    <string name="registration_page">Registration Page</string>
+    <string name="guess_generated_number">Guess generated number</string>
+</resources>
