@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CustomProgressView">
+        <attr name="progress" format="float" />
+        <attr name="backgroundColor" format="color" />
+        <attr name="progressColor" format="color" />
+        <attr name="strokeWidth" format="integer" />
+        <attr name="startColor" format="color" />
+        <attr name="endColor" format="color" />
+
+    </declare-styleable>
+</resources>
