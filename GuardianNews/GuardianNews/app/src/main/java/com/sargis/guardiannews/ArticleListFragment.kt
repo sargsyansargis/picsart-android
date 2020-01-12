@@ -37,7 +37,7 @@ class ArticlesListFragment : Fragment() {
 
         override fun onReceive(context: Context, intent: Intent) {
             updateData()
-            Log.e("QAQIKNER", "Broadcast")
+
 
         }
     }

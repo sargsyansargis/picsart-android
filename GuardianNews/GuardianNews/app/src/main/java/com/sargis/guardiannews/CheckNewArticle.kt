@@ -25,7 +25,6 @@ class CheckNewArticle(var context: Context) {
                 call: Call<MainResponse>,
                 response: Response<MainResponse>
             ) {
-                Log.e("QAQIKNER","fafsaf")
                 EXECUTOR.execute {
                     val isNewFeedItem = GuardianDB.getInstance(context).articleDao()
                         .findArticle(response.body()!!.articleResponse.articleModels[0].id) == null
