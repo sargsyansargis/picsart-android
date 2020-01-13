@@ -12,12 +12,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        var articlesListFragment = supportFragmentManager.findFragmentByTag(FRAGMENT_TAG)
-        if (articlesListFragment == null) {
-            articlesListFragment = ArticlesListFragment()
-            supportFragmentManager.beginTransaction()
-                .add(R.id.fragment_container, articlesListFragment, FRAGMENT_TAG).commit()
-        }
 
         val intent = Intent(this, NotificationService::class.java)
         startService(intent)

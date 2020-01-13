@@ -6,16 +6,18 @@ import android.content.Intent
 import android.content.IntentFilter
 import android.net.ConnectivityManager
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import androidx.paging.LivePagedListBuilder
 import androidx.paging.PagedList
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -52,8 +54,13 @@ class ArticlesListFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
+
+
         return inflater.inflate(R.layout.fragment_articels_list, container, false)
     }
+
+
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -89,6 +96,7 @@ class ArticlesListFragment : Fragment() {
                     }
                 }
             }
+
         }
 
         val config = PagedList.Config.Builder()
