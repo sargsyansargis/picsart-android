@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.navigation.fragment.navArgs
+import androidx.transition.TransitionInflater
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.sargis.guardiannews.databinding.FragmentArticleDetailBinding
@@ -27,11 +28,15 @@ class ArticleDetailFragment : Fragment() {
 
         val model = args.model
         if (model != null) {
-            Glide.with(this)
+
+            binding.articleImage.also {
+                it.transitionName = model.id
+
+                Glide.with(this)
                 .load(model.fields?.thumbnail)
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .fitCenter()
-                .into(binding.articleImage)
+                .into(it)}
             binding.articleCategory.text = model.sectionName.toString()
             binding.articleTitle.text = model.webTitle.toString()
         }
@@ -40,6 +45,11 @@ class ArticleDetailFragment : Fragment() {
 
 
         return binding.root
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        sharedElementEnterTransition = TransitionInflater.from(context).inflateTransition(android.R.transition.move)
     }
 
 

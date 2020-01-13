@@ -10,6 +10,7 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.paging.PagedListAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
@@ -90,9 +91,13 @@ class ArticleListAdapter :
 
 
             image.setOnClickListener{
+                it.transitionName = articleModel.id
+                val extras = FragmentNavigatorExtras(
+                    image to articleModel.id
+                )
 
                 it?.findNavController()?.navigate(
-                    ArticlesListFragmentDirections.actionArticlesListFragmentToArticleDetailFragment(articleModel))
+                    ArticlesListFragmentDirections.actionArticlesListFragmentToArticleDetailFragment(articleModel),extras)
 
             }
             likeButton.text = if (articleModel.liked) "Liked" else "Like"
